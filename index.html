@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>توپ جادویی</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" />
+  <meta name="theme-color" content="#052240" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <h1>توپ جادویی</h1>
+    <div class="subtitle">نیت کن و تکون بده</div>
+
+    <div class="ball" id="ball">
+      <div class="answer" id="answer">🔮</div>
+    </div>
+
+    <button id="shakeBtn" title="تکون دادن جواب">تکون دادن</button>
+
+    <div class="controls">
+      <select id="category" title="انتخاب موضوع">
+        <option value="general">کلی</option>
+        <option value="love">عشق و عاشقی</option>
+        <option value="work">کاری</option>
+        <option value="funny">مسخره‌بازی</option>
+      </select>
+      <button id="toggleTheme" title="حالت شب و روز" aria-label="حالت شب و روز">🌙</button>
+    </div>
+
+    <div class="history-container">
+      <h2>تاریخچه</h2>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+
+  <audio id="shakeSound" src="shake.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
